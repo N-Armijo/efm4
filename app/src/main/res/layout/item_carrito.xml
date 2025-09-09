@@ -14,11 +14,11 @@
         android:padding="12dp">
 
         <ImageView
-            android:id="@+id/imageViewPortadaCarrito"
+            android:id="@+id/iv_portada_carrito"
             android:layout_width="60dp"
             android:layout_height="90dp"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/descripcion_imagen_portada" />
+            android:contentDescription="@string/descripcion_iv_portada" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -29,7 +29,7 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/textViewTituloCarrito"
+                android:id="@+id/tv_titulo_carrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
@@ -37,7 +37,7 @@
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:id="@+id/textViewDescripcionCarrito"
+                android:id="@+id/tv_descripcion_carrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"

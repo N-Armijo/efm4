@@ -12,15 +12,15 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageViewPortadaDetalle"
+            android:id="@+id/iv_portada_detalle"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/descripcion_imagen_portada"
+            android:contentDescription="@string/descripcion_iv_portada"
             android:layout_marginBottom="16dp" />
 
         <TextView
-            android:id="@+id/textViewTituloDetalle"
+            android:id="@+id/tv_titulo_detalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="22sp"
@@ -29,7 +29,7 @@
             android:layout_marginBottom="8dp" />
 
         <TextView
-            android:id="@+id/textViewDescripcionDetalle"
+            android:id="@+id/tv_descripcion_detalle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -37,10 +37,10 @@
             android:layout_marginBottom="24dp" />
 
         <Button
-            android:id="@+id/buttonComprar"
+            android:id="@+id/btn_comprar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Comprar Ahora"
+            android:text="@string/btn_comprar"
             android:textSize="18sp" />
 
     </LinearLayout>

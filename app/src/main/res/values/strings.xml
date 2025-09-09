@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Librería Online</string>
-    <string name="descripcion_imagen_portada">Portada del libro</string>
-    <string name="agregar_al_carrito">Agregar</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="descripcion_iv_portada">Portada del libro</string>
+    <string name="btn_agregar_carrito">Agregar</string>
+    <string name="tv_titulo_categorias">📚 Categorías</string>
+    <string name="tv_mensaje_vacio">Tu carrito está vacío.\n¡Sigue explorando!</string>
+    <string name="tv_titulo_tu_carrito">🛒 Tu Carrito</string>
+    <string name="btn_comprar">Comprar Ahora</string>
 </resources>

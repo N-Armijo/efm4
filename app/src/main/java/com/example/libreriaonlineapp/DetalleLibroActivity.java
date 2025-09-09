@@ -20,9 +20,9 @@ public class DetalleLibroActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        ImageView imageViewPortada = findViewById(R.id.imageViewPortadaDetalle);
-        TextView textViewTitulo = findViewById(R.id.textViewTituloDetalle);
-        TextView textViewDescripcion = findViewById(R.id.textViewDescripcionDetalle);
+        ImageView imageViewPortada = findViewById(R.id.iv_portada_detalle);
+        TextView textViewTitulo = findViewById(R.id.tv_titulo_detalle);
+        TextView textViewDescripcion = findViewById(R.id.tv_descripcion_detalle);
 
         // Obtener datos del Intent
         String titulo = getIntent().getStringExtra("TITULO_LIBRO");
@@ -42,7 +42,7 @@ public class DetalleLibroActivity extends AppCompatActivity {
         imageViewPortada.setImageResource(imagenId);
 
         // Botón de compra
-        findViewById(R.id.buttonComprar).setOnClickListener(v ->
+        findViewById(R.id.btn_comprar).setOnClickListener(v ->
                 Toast.makeText(this, "¡Proximamente;!", Toast.LENGTH_LONG).show()
         );
         if (titulo != null && getSupportActionBar() != null) {

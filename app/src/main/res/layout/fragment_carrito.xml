@@ -8,9 +8,10 @@
     tools:context=".CarritoFragment">
 
     <TextView
+        android:id="@+id/tv_titulo_tu_carrito"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="🛒 Tu Carrito"
+        android:text="@string/tv_titulo_tu_carrito"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -18,18 +19,18 @@
 
     <!-- Mensaje para cuando el carrito está vacío -->
     <TextView
-        android:id="@+id/textViewMensajeVacio"
+        android:id="@+id/tv_mensaje_vacio"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Tu carrito está vacío.\n¡Sigue explorando!"
+        android:text="@string/tv_mensaje_vacio"
         android:textSize="18sp"
         android:visibility="gone" />
 
     <!-- RecyclerView para mostrar los libros en el carrito -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewCarrito"
+        android:id="@+id/rv_carrito"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

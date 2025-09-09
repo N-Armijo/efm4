@@ -24,8 +24,8 @@ public class CarritoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_carrito, container, false);
 
         // Inicializar vistas
-        recyclerViewCarrito = view.findViewById(R.id.recyclerViewCarrito);
-        textViewMensajeVacio = view.findViewById(R.id.textViewMensajeVacio);
+        recyclerViewCarrito = view.findViewById(R.id.rv_carrito);
+        textViewMensajeVacio = view.findViewById(R.id.tv_mensaje_vacio);
 
         // Configurar RecyclerView
         recyclerViewCarrito.setLayoutManager(new LinearLayoutManager(getContext()));

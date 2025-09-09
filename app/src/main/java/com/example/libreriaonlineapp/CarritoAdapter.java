@@ -50,9 +50,9 @@ public class CarritoAdapter extends RecyclerView.Adapter<CarritoAdapter.CarritoV
 
         public CarritoViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewTitulo = itemView.findViewById(R.id.textViewTituloCarrito);
-            textViewDescripcion = itemView.findViewById(R.id.textViewDescripcionCarrito);
-            imageViewPortada = itemView.findViewById(R.id.imageViewPortadaCarrito);
+            textViewTitulo = itemView.findViewById(R.id.tv_titulo_carrito);
+            textViewDescripcion = itemView.findViewById(R.id.tv_descripcion_carrito);
+            imageViewPortada = itemView.findViewById(R.id.iv_portada_carrito);
         }
     }
 }

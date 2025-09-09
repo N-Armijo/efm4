@@ -74,10 +74,10 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
 
         public LibroViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewTitulo = itemView.findViewById(R.id.textViewTitulo);
-            textViewDescripcion = itemView.findViewById(R.id.textViewDescripcion);
-            imageViewPortada = itemView.findViewById(R.id.imageViewPortada);
-            buttonAgregarCarrito = itemView.findViewById(R.id.buttonAgregarCarrito);
+            textViewTitulo = itemView.findViewById(R.id.tv_titulo);
+            textViewDescripcion = itemView.findViewById(R.id.tv_descripcion);
+            imageViewPortada = itemView.findViewById(R.id.iv_portada);
+            buttonAgregarCarrito = itemView.findViewById(R.id.btn_agregar_carrito);
         }
     }
 }

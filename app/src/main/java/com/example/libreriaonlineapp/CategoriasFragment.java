@@ -35,7 +35,7 @@ public class CategoriasFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_categorias, container, false);
 
-        recyclerViewCategorias = view.findViewById(R.id.recyclerViewCategorias);
+        recyclerViewCategorias = view.findViewById(R.id.rv_categorias);
         recyclerViewCategorias.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Lista de categorías

@@ -1,7 +1,6 @@
 package com.example.libreriaonlineapp;
 
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements OnCategoriaSelecc
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bnv_navigation);
 
         // Cargar el fragmento de inicio por defecto
         loadFragment(new HomeFragment());
@@ -53,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements OnCategoriaSelecc
         }
 
         fragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, fragment, tag)
+                .replace(R.id.fl_fragment_container, fragment, tag)
                 .commit();
     }
 
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements OnCategoriaSelecc
         loadFragment(homeFragment);
 
         // Cambiamos a la pestaña de Inicio
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+        BottomNavigationView bottomNav = findViewById(R.id.bnv_navigation);
         bottomNav.setSelectedItemId(R.id.navigation_home);
     }
 }

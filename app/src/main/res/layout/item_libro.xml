@@ -14,11 +14,11 @@
         android:padding="12dp">
 
         <ImageView
-            android:id="@+id/imageViewPortada"
+            android:id="@+id/iv_portada"
             android:layout_width="80dp"
             android:layout_height="120dp"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/descripcion_imagen_portada" />
+            android:contentDescription="@string/descripcion_iv_portada" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -29,7 +29,7 @@
             android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/textViewTitulo"
+                android:id="@+id/tv_titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -37,7 +37,7 @@
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:id="@+id/textViewDescripcion"
+                android:id="@+id/tv_descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -47,11 +47,11 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonAgregarCarrito"
+            android:id="@+id/btn_agregar_carrito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="@string/agregar_al_carrito"
+            android:text="@string/btn_agregar_carrito"
             android:minWidth="120dp" />
 
     </LinearLayout>

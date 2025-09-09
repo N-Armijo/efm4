@@ -26,7 +26,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        recyclerViewLibros = view.findViewById(R.id.recyclerViewLibros);
+        recyclerViewLibros = view.findViewById(R.id.rv_libros);
         recyclerViewLibros.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Crear la lista de libros
