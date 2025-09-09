@@ -6,6 +6,37 @@ Esta aplicación es una librería online que permite a los usuarios explorar lib
 
 ---
 
+## ❓ Respuestas a Requerimientos Teóricos y Prácticos
+
+### 1. Establecer el Contexto del Proyecto: Tecnologías y Herramientas Clave
+
+En el desarrollo de aplicaciones móviles Android, se utilizan diversas tecnologías y herramientas que forman un ecosistema robusto y eficiente. Tres de las más importantes son:
+
+*   **Android Studio:** Es el entorno de desarrollo integrado (IDE) oficial para Android. Proporciona un editor de código inteligente, un emulador de dispositivos, herramientas de depuración, un diseñador visual de interfaces (Layout Editor) y una integración perfecta con Gradle. Es la herramienta fundamental donde se escribe, prueba y depura todo el código de la aplicación.
+*   **Lenguaje de Programación Java/Kotlin:** Java ha sido históricamente el lenguaje principal, pero Kotlin es ahora el lenguaje preferido y oficialmente recomendado por Google. Ambos permiten definir la lógica de la aplicación, manejar eventos de usuario, gestionar datos y controlar el flujo entre pantallas. En este proyecto, se utilizó Java por requerimiento específico.
+*   **Gradle (Sistema de Compilación):** Es la herramienta que automatiza la compilación, el empaquetado y la gestión de dependencias del proyecto. A través del archivo `build.gradle`, se definen las bibliotecas externas necesarias (como `RecyclerView`, `CardView`, etc.), la versión mínima de Android compatible y otras configuraciones esenciales. Sin Gradle, sería muy complejo gestionar las librerías y construir el APK final.
+
+### 2. Entorno de Desarrollo Android: Configuración Inicial del Proyecto
+
+Para configurar un nuevo proyecto nativo en Android Studio, se siguieron estos pasos esenciales:
+
+1.  **Tipo de Proyecto:** Se seleccionó la plantilla **“Empty Views Activity”**. Esta plantilla crea una actividad básica con una interfaz de usuario basada en vistas (XML), que es ideal para proyectos que no usan Jetpack Compose, permitiendo un control total sobre la estructura de la interfaz.
+2.  **Nombre del Proyecto y Paquete:** Se definió el nombre de la aplicación como `LibreriaOnlineApp` y el nombre del paquete como `com.example.libreriaonlineapp`. El nombre del paquete es único y actúa como el identificador de la aplicación en el sistema Android y en Google Play.
+3.  **Versión Mínima de Android (Min SDK):** Se estableció la versión mínima en **API 26: Android 8.0 (Oreo)**. Esta decisión se tomó para asegurar la compatibilidad con una amplia gama de dispositivos (cubriendo un 97,4% del mercado actual), mientras se tiene acceso a las APIs modernas necesarias para implementar componentes como `RecyclerView` y `CardView` sin limitaciones.
+
+### 3. Elementos de Configuración del Proyecto: Manejo de Assets
+
+Los “assets” o recursos en un proyecto Android incluyen imágenes, fuentes, archivos de audio, videos y otros archivos estáticos. Se manejan de la siguiente manera:
+
+*   **Ubicación:** Se organizan dentro de la carpeta `app/src/main/res/`. Las imágenes se colocan en subcarpetas como `drawable-hdpi`, `drawable-xhdpi`, `drawable-xxhdpi` y `drawable-xxxhdpi`, según su densidad de píxeles. Esto permite que el sistema operativo elija automáticamente la imagen más adecuada para la pantalla del dispositivo del usuario.
+*   **Optimización:** Es crucial optimizar estos recursos porque:
+    *   **Rendimiento:** Imágenes demasiado grandes consumen mucha memoria RAM, lo que puede causar lentitud o incluso que la aplicación se cierre inesperadamente (crash).
+    *   **Tamaño del APK:** Un APK grande tarda más en descargarse e instalar, lo que puede disuadir a los usuarios.
+    *   **Experiencia de Usuario:** Imágenes no optimizadas pueden verse pixeladas en pantallas de alta densidad o borrosas en pantallas de baja densidad.
+*   En este proyecto, las imágenes de portada de los libros se guardaron en formato `.jpg` (para reducir el tamaño) y se colocaron en la carpeta `drawable-xxxhdpi` para garantizar una excelente calidad en dispositivos modernos de alta resolución.
+
+---
+
 ## 🎯 Funcionalidades Principales
 
 1.  **Pantalla Principal (Inicio):**
@@ -61,18 +92,25 @@ Esta aplicación es una librería online que permite a los usuarios explorar lib
 ## 📸 Capturas de Pantalla
 
 *Pantalla Principal*
+
 <p align="center">
   <img src="capturas/pantalla_principal.png" alt="Pantalla Principal">
 </p>
+
 *Muestra la lista de libros en la pestaña "Inicio".*
+
 <p align="center">
   <img src="capturas/pantalla_detalles.png" alt="Pantalla de Detalles">
 </p>
+
 *Muestra la información completa de un libro.*
+
 <p align="center">
   <img src="capturas/pantalla_categorias.png" alt="Pantalla de Categorías">
 </p>
+
 *Permite al usuario filtrar los libros por género.*
+
 <p align="center">
   <img src="capturas/pantalla_carrito.png" alt="Pantalla del Carrito">
 </p>
