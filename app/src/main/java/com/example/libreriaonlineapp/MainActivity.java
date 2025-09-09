@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements OnCategoriaSelecc
         }
 
         fragmentManager.beginTransaction()
-                .replace(R.id.fl_fragment_container, fragment, tag)
+                .replace(R.id.container_main, fragment, tag)
                 .commit();
     }
 
