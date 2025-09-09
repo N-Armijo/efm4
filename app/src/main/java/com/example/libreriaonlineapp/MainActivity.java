@@ -58,13 +58,12 @@ public class MainActivity extends AppCompatActivity implements OnCategoriaSelecc
 
     @Override
     public void onCategoriaSeleccionada(String categoria) {
-        System.out.println("DEBUG: MainActivity recibió: " + categoria);
+        System.out.println("DEBUG: MainActivity recibio: " + categoria);
 
         // Siempre creamos un NUEVO HomeFragment
         HomeFragment homeFragment = new HomeFragment();
 
         // Guardamos la categoría seleccionada en una variable estática
-        // (Esta es una solución rápida y efectiva para la evaluación)
         HomeFragment.CATEGORIA_SELECCIONADA = categoria;
 
         // Cargamos el nuevo fragmento

@@ -15,7 +15,7 @@ public class DetalleLibroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_libro);
 
-        // Habilitar botón "up" en la ActionBar
+        // Habilitar boton "up" en la ActionBar
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -41,7 +41,7 @@ public class DetalleLibroActivity extends AppCompatActivity {
         }
         imageViewPortada.setImageResource(imagenId);
 
-        // Botón de compra
+        // Boton de compra
         findViewById(R.id.btn_comprar).setOnClickListener(v ->
                 Toast.makeText(this, "¡Proximamente;!", Toast.LENGTH_LONG).show()
         );
@@ -50,7 +50,7 @@ public class DetalleLibroActivity extends AppCompatActivity {
         }
     }
 
-    // Manejar navegación "hacia arriba"
+    // Manejar navegacion "hacia arriba"
     @Override
     public boolean onSupportNavigateUp() {
         NavUtils.navigateUpFromSameTask(this);

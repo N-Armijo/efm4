@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
         recyclerViewLibros = view.findViewById(R.id.rv_libros);
         recyclerViewLibros.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Crear la lista de libros
+        // Crear la lista de libros -> Debo cambiar imagenes
         listaLibros = new ArrayList<>();
         listaLibros.add(new Libro("Babel", "Una novela de historia secreta y fantasía oscura de Rebecca F. Kuang.", R.drawable.libro1, "Fantasía Histórica"));
         listaLibros.add(new Libro("La República del Dragón", "Una épica de fantasía de la aclamada autora Rebecca F. Kuang.", R.drawable.libro1, "Fantasía"));
@@ -53,11 +53,11 @@ public class HomeFragment extends Fragment {
         // Guardar copia original
         listaLibrosCompleta = new ArrayList<>(listaLibros);
 
-        // ¡CREAR EL ADAPTADOR ANTES DE FILTRAR!
+        // CREAR EL ADAPTADOR ANTES DE FILTRAR
         adaptador = new LibroAdapter(requireContext(), listaLibros);
         recyclerViewLibros.setAdapter(adaptador);
 
-        // Aplicar el filtro DESPUÉS de que el adaptador esté listo
+        // Aplicar el filtro DESPUES de que el adaptador este listo
         if (!CATEGORIA_SELECCIONADA.equals("Todas")) {
             filtrarPorCategoria(CATEGORIA_SELECCIONADA);
         }
@@ -79,7 +79,6 @@ public class HomeFragment extends Fragment {
             }
         }
 
-        // ¡Ahora adaptador NO será null!
         adaptador.notifyDataSetChanged();
     }
 }

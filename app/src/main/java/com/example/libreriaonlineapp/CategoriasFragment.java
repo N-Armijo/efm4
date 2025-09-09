@@ -55,11 +55,11 @@ public class CategoriasFragment extends Fragment {
         adaptador = new CategoriaAdapter(requireContext(), categorias, new CategoriaAdapter.OnCategoriaClickListener() {
             @Override
             public void onCategoriaClick(String categoria) {
-                System.out.println("DEBUG: Categoría clickeada: " + categoria);
-                Toast.makeText(requireContext(), "Categoría seleccionada: " + categoria, Toast.LENGTH_SHORT).show(); // <-- AGREGA ESTO
+                //System.out.println("DEBUG: Categoría clickeada: " + categoria);
+                //Toast.makeText(requireContext(), "Categoría seleccionada: " + categoria, Toast.LENGTH_SHORT).show(); // <-- AGREGA ESTO
 
                 if (listener != null) {
-                    System.out.println("DEBUG: Enviando al listener...");
+                    //System.out.println("DEBUG: Enviando al listener...");
                     listener.onCategoriaSeleccionada(categoria);
                 } else {
                     System.out.println("DEBUG: ¡ERROR! Listener es NULL.");

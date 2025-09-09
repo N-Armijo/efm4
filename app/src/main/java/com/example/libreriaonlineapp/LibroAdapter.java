@@ -46,12 +46,12 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
                 // Agregar el libro al carrito usando el gestor
                 CarritoManager.getInstancia().agregarLibro(libroActual);
 
-                // Mostrar un mensaje de confirmación
+                // Mostrar un mensaje de confirmacion
                 Toast.makeText(context, "¡" + libroActual.getTitulo() + " agregado al carrito!", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Navegar a la pantalla de detalles al hacer clic en el item
+        // Navegar a la pantalla de detalles al hacer click en el item
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetalleLibroActivity.class);
             intent.putExtra("TITULO_LIBRO", libroActual.getTitulo());

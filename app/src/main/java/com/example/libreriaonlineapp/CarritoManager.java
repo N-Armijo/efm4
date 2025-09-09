@@ -32,7 +32,7 @@ public class CarritoManager {
     public List<Libro> getLibrosEnCarrito() {
         return new ArrayList<>(librosEnCarrito); // Devolvemos una copia para evitar modificaciones externas
     }
-
+    //Futuro implementar un botno para borrar elementos de carrito o un solo elemnto
     // Obtener la cantidad de libros en el carrito
     public int getCantidadLibros() {
         return librosEnCarrito.size();
