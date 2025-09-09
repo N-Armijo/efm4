@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Librería Online</string>
+    <string name="tv_home_titulo">Bienvenido a Librería Online</string>
     <string name="descripcion_iv_portada">Portada del libro</string>
     <string name="btn_agregar_carrito">Agregar</string>
     <string name="tv_titulo_categorias">📚 Categorías</string>
