@@ -40,8 +40,15 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         holder.textViewDescripcion.setText(libroActual.getDescripcion());
         holder.imageViewPortada.setImageResource(libroActual.getImagenResourceId());
 
-        holder.buttonAgregarCarrito.setOnClickListener(v -> {
-            Toast.makeText(context, "¡" + libroActual.getTitulo() + " agregado al carrito!", Toast.LENGTH_SHORT).show();
+        holder.buttonAgregarCarrito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Agregar el libro al carrito usando el gestor
+                CarritoManager.getInstancia().agregarLibro(libroActual);
+
+                // Mostrar un mensaje de confirmación
+                Toast.makeText(context, "¡" + libroActual.getTitulo() + " agregado al carrito!", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Navegar a la pantalla de detalles al hacer clic en el item

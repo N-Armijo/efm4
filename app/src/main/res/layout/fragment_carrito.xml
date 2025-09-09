@@ -3,32 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp"
+    android:padding="16dp"
     tools:context=".CarritoFragment">
 
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@android:drawable/ic_menu_my_calendar"
-        android:contentDescription="Icono de carrito vacío" />
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="🛒 Tu Carrito"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black" />
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Mensaje para cuando el carrito está vacío -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:id="@+id/textViewMensajeVacio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:text="Tu carrito está vacío.\n¡Sigue explorando!"
         android:textSize="18sp"
-        android:gravity="center" />
+        android:visibility="gone" />
+
+    <!-- RecyclerView para mostrar los libros en el carrito -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
 
 </LinearLayout>
