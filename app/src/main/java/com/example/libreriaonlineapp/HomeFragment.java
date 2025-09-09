@@ -31,24 +31,24 @@ public class HomeFragment extends Fragment {
 
         // Crear la lista de libros -> Debo cambiar imagenes
         listaLibros = new ArrayList<>();
-        listaLibros.add(new Libro("Babel", "Una novela de historia secreta y fantasía oscura de Rebecca F. Kuang.", R.drawable.libro1, "Fantasía Histórica"));
-        listaLibros.add(new Libro("La República del Dragón", "Una épica de fantasía de la aclamada autora Rebecca F. Kuang.", R.drawable.libro1, "Fantasía"));
-        listaLibros.add(new Libro("Proyecto Hail Mary", "Una historia de supervivencia intergaláctica de Andy Weir.", R.drawable.libro1, "Ciencia Ficción"));
-        listaLibros.add(new Libro("Dune", "La obra maestra de ciencia ficción de Frank Herbert.", R.drawable.libro1, "Ciencia Ficción"));
-        listaLibros.add(new Libro("El Problema de los Tres Cuerpos", "El inicio de una trilogía de Liu Cixin que redefine la ciencia ficción moderna.", R.drawable.libro1, "Ciencia Ficción"));
-        listaLibros.add(new Libro("Katabasis", " La novela sigue a dos magos, candidatos a doctorado, que deben aventurarse en el infierno para salvar a su director de tesis y así obtener cartas de recomendación.", R.drawable.libro1, "Ciencia Ficción"));
-        listaLibros.add(new Libro("La Tumba del Emperador", "El primer libro de una serie de fantasía oscura y ciencia ficción de Tamsyn Muir.", R.drawable.libro1, "Fantasía Oscura"));
-        listaLibros.add(new Libro("La Guerra de la Amapola", "El primer libro de la trilogía bélica de fantasía de R.F. Kuang.", R.drawable.libro1, "Fantasía Bélica"));
-        listaLibros.add(new Libro("Cuentos de Terramar", "Una serie de fantasía clásica de Ursula K. Le Guin.", R.drawable.libro1, "Fantasía Clásica"));
-        listaLibros.add(new Libro("El Asesino de Mago", "Un thriller de fantasía de Robin Hobb.", R.drawable.libro1, "Fantasía"));
-        listaLibros.add(new Libro("Gideon la Novena", "Ciencia ficción y fantasía oscura de Tamsyn Muir.", R.drawable.libro1, "Ciencia Ficción"));
-        listaLibros.add(new Libro("El Principito", "Fábula filosófica de Antoine de Saint-Exupéry.", R.drawable.libro1, "Fábula"));
-        listaLibros.add(new Libro("Matilda", "Una niña genio que descubre sus poderes, de Roald Dahl.", R.drawable.libro1, "Ficción"));
-        listaLibros.add(new Libro("Donde Viven los Monstruos", "Una aventura de Max en un mundo imaginario.", R.drawable.libro1, "Infantil"));
-        listaLibros.add(new Libro("El Grúfalo", "Un ratón ingenioso se enfrenta a una criatura espantosa.", R.drawable.libro1, "Infantil"));
-        listaLibros.add(new Libro("La Telaraña de Carlota", "Una historia de amistad entre una araña y un cerdo.", R.drawable.libro1, "Infantil"));
-        listaLibros.add(new Libro("El Libro de la Selva", "Las aventuras de Mowgli en la selva, de Rudyard Kipling.", R.drawable.libro1, "Clásico"));
-        listaLibros.add(new Libro("Harry Potter y la Piedra Filosofal", "El inicio de las aventuras de Harry Potter en Hogwarts.", R.drawable.libro1, "Fantasía"));
+        listaLibros.add(new Libro("Babel", "Una novela de historia secreta y fantasía oscura de Rebecca F. Kuang.", R.drawable.babel, "Fantasía Histórica"));
+        listaLibros.add(new Libro("La República del Dragón", "Una épica de fantasía de la aclamada autora Rebecca F. Kuang.", R.drawable.republica_dragon, "Fantasía"));
+        listaLibros.add(new Libro("Proyecto Hail Mary", "Una historia de supervivencia intergaláctica de Andy Weir.", R.drawable.proyecto_hail_mary, "Ciencia Ficción"));
+        listaLibros.add(new Libro("Dune", "La obra maestra de ciencia ficción de Frank Herbert.", R.drawable.dune, "Ciencia Ficción"));
+        listaLibros.add(new Libro("El Problema de los Tres Cuerpos", "El inicio de una trilogía de Liu Cixin que redefine la ciencia ficción moderna.", R.drawable.el_problema_de_los_tres_cuerpos, "Ciencia Ficción"));
+        listaLibros.add(new Libro("Katabasis", " La novela sigue a dos magos, candidatos a doctorado, que deben aventurarse en el infierno para salvar a su director de tesis y así obtener cartas de recomendación.", R.drawable.katabasis, "Ciencia Ficción"));
+        listaLibros.add(new Libro("La Tumba del Emperador", "El primer libro de una serie de fantasía oscura y ciencia ficción de Tamsyn Muir.", R.drawable.la_tumba_del_emperador, "Fantasía Oscura"));
+        listaLibros.add(new Libro("La Guerra de la Amapola", "El primer libro de la trilogía bélica de fantasía de R.F. Kuang.", R.drawable.la_guerra_de_la_amapola, "Fantasía Bélica"));
+        listaLibros.add(new Libro("Cuentos de Terramar", "Una serie de fantasía clásica de Ursula K. Le Guin.", R.drawable.cuentos_de_terramar, "Fantasía Clásica"));
+        listaLibros.add(new Libro("Asesino Real", "Un thriller de fantasía de Robin Hobb.", R.drawable.asesino_real, "Fantasía"));
+        listaLibros.add(new Libro("Harrow La Novena", "Ciencia ficción y fantasía oscura de Tamsyn Muir.", R.drawable.harrow_la_novena, "Ciencia Ficción"));
+        listaLibros.add(new Libro("El Principito", "Fábula filosófica de Antoine de Saint-Exupéry.", R.drawable.el_principito, "Fábula"));
+        listaLibros.add(new Libro("Matilda", "Una niña genio que descubre sus poderes, de Roald Dahl.", R.drawable.matilda, "Infantil"));
+        listaLibros.add(new Libro("Donde Viven los Monstruos", "Una aventura de Max en un mundo imaginario, de Maurice Sendak.", R.drawable.donde_viven_los_monstruos, "Infantil"));
+        listaLibros.add(new Libro("El Grúfalo", "Un ratón ingenioso se enfrenta a una criatura espantosa, de Julia Donaldson.", R.drawable.el_grufalo, "Infantil"));
+        listaLibros.add(new Libro("La Telaraña de Carlota", "Una historia de amistad entre una araña y un cerdo.", R.drawable.la_telarana_de_carlota, "Infantil"));
+        listaLibros.add(new Libro("El Libro de la Selva", "Las aventuras de Mowgli en la selva, de Rudyard Kipling.", R.drawable.el_libro_de_la_selva, "Clásico"));
+        listaLibros.add(new Libro("Harry Potter y la Piedra Filosofal", "El inicio de las aventuras de Harry Potter en Hogwarts.", R.drawable.harry_potter_y_la_piedra_filosofal, "Fantasía"));
 
         // Guardar copia original
         listaLibrosCompleta = new ArrayList<>(listaLibros);

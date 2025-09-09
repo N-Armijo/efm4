@@ -27,7 +27,7 @@ public class DetalleLibroActivity extends AppCompatActivity {
         // Obtener datos del Intent
         String titulo = getIntent().getStringExtra("TITULO_LIBRO");
         String descripcion = getIntent().getStringExtra("DESCRIPCION_LIBRO");
-        int imagenId = getIntent().getIntExtra("IMAGEN_LIBRO", R.drawable.libro1);
+        int imagenId = getIntent().getIntExtra("IMAGEN_LIBRO", R.drawable.katabasis);
 
         // Mostrar datos
         if (titulo != null) {
