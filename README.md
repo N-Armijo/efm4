@@ -4,7 +4,7 @@
 
 Esta aplicación es una librería online que permite a los usuarios explorar libros, filtrarlos por categoría, ver detalles de cada libro y agregarlos a un carrito de compras.".
 
-🔗 **Repositorio en GitHub:** [github.com/N-Armijo/efm4](https://github.com/N-Armijo/efm4)
+#### 🔗 Repositorio en GitHub: [github.com/N-Armijo/efm4](https://github.com/N-Armijo/efm4)
 ---
 
 ## ❓ Respuestas a Requerimientos Teóricos y Prácticos
