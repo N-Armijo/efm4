@@ -45,6 +45,9 @@ public class DetalleLibroActivity extends AppCompatActivity {
         findViewById(R.id.buttonComprar).setOnClickListener(v ->
                 Toast.makeText(this, "¡Compra iniciada para: " + titulo + "!", Toast.LENGTH_LONG).show()
         );
+        if (titulo != null && getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(titulo);
+        }
     }
 
     // Manejar navegación "hacia arriba"

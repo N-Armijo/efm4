@@ -1,60 +1,49 @@
 package com.example.libreriaonlineapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
-
-    private RecyclerView recyclerViewLibros;
-    private LibroAdapter adaptador;
-    private List<Libro> listaLibros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inicializar vistas
-        recyclerViewLibros = findViewById(R.id.recyclerViewLibros);
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        // Configurar RecyclerView
-        recyclerViewLibros.setLayoutManager(new LinearLayoutManager(this));
+        // Cargar el fragmento de inicio por defecto
+        loadFragment(new HomeFragment());
 
-        // Datos de ejemplo
-        listaLibros = new ArrayList<>();
-        listaLibros.add(new Libro("Cien Años de Soledad", "Obra maestra de Gabriel García Márquez.", R.drawable.libro1));
-        listaLibros.add(new Libro("1984", "Distopía escrita por George Orwell.", R.drawable.libro1));
-        listaLibros.add(new Libro("El Principito", "Fábula filosófica de Antoine de Saint-Exupéry.", R.drawable.libro1));
-        listaLibros.add(new Libro("Don Quijote", "Novela de Miguel de Cervantes.", R.drawable.libro1));
-        listaLibros.add(new Libro("Orgullo y Prejuicio", "Novela romántica de Jane Austen.", R.drawable.libro1));
-
-        // Asignar adaptador
-        adaptador = new LibroAdapter(this, listaLibros);
-        recyclerViewLibros.setAdapter(adaptador);
-
-        // Configurar BottomNavigationView
+        // Configurar el listener del BottomNavigationView
         bottomNavigationView.setOnItemSelectedListener(item -> {
+            Fragment fragment = null;
+
             if (item.getItemId() == R.id.navigation_home) {
-                // Ya estamos en Home, no hacemos nada
-                return true;
+                fragment = new HomeFragment();
             } else if (item.getItemId() == R.id.navigation_categories) {
-                startActivity(new Intent(MainActivity.this, CategoriasActivity.class));
-                return true;
+                fragment = new CategoriasFragment();
             } else if (item.getItemId() == R.id.navigation_cart) {
-                startActivity(new Intent(MainActivity.this, CarritoActivity.class));
+                fragment = new CarritoFragment();
+            }
+
+            if (fragment != null) {
+                loadFragment(fragment);
                 return true;
             }
             return false;
         });
+    }
+
+    // Método para cargar un fragmento en el contenedor
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragmentContainer, fragment);
+        transaction.commit();
     }
 }
