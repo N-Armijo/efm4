@@ -6,40 +6,51 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
 public class DetalleLibroActivity extends AppCompatActivity {
-
-    private ImageView imageViewPortada;
-    private TextView textViewTitulo;
-    private TextView textViewDescripcion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_libro);
 
-        // Inicializar vistas
-        imageViewPortada = findViewById(R.id.imageViewPortadaDetalle);
-        textViewTitulo = findViewById(R.id.textViewTituloDetalle);
-        textViewDescripcion = findViewById(R.id.textViewDescripcionDetalle);
+        // Habilitar botón "up" en la ActionBar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
-        // Obtener los datos enviados desde MainActivity
+        ImageView imageViewPortada = findViewById(R.id.imageViewPortadaDetalle);
+        TextView textViewTitulo = findViewById(R.id.textViewTituloDetalle);
+        TextView textViewDescripcion = findViewById(R.id.textViewDescripcionDetalle);
+
+        // Obtener datos del Intent
         String titulo = getIntent().getStringExtra("TITULO_LIBRO");
         String descripcion = getIntent().getStringExtra("DESCRIPCION_LIBRO");
-        int imagenId = getIntent().getIntExtra("IMAGEN_LIBRO", R.drawable.libro1); // Valor por defecto
+        int imagenId = getIntent().getIntExtra("IMAGEN_LIBRO", R.drawable.libro1);
 
-        // Mostrar los datos en la UI
+        // Mostrar datos
         if (titulo != null) {
             textViewTitulo.setText(titulo);
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setTitle(titulo);
+            }
         }
         if (descripcion != null) {
             textViewDescripcion.setText(descripcion);
         }
         imageViewPortada.setImageResource(imagenId);
 
-        // Configurar botón de compra (opcional, para demostración)
-        findViewById(R.id.buttonComprar).setOnClickListener(v -> {
-            Toast.makeText(this, "¡Compra de '" + titulo + "' iniciada!", Toast.LENGTH_LONG).show();
-        });
+        // Botón de compra
+        findViewById(R.id.buttonComprar).setOnClickListener(v ->
+                Toast.makeText(this, "¡Compra iniciada para: " + titulo + "!", Toast.LENGTH_LONG).show()
+        );
+    }
+
+    // Manejar navegación "hacia arriba"
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavUtils.navigateUpFromSameTask(this);
+        return true;
     }
 }

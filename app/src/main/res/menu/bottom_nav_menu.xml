@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_menu_home"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/navigation_categories"
+        android:icon="@drawable/ic_menu_category"
+        android:title="Categorías" />
+
+    <item
+        android:id="@+id/navigation_cart"
+        android:icon="@drawable/ic_menu_cart"
+        android:title="Carrito" />
+</menu>

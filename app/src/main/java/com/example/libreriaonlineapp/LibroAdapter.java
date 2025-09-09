@@ -40,25 +40,17 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
         holder.textViewDescripcion.setText(libroActual.getDescripcion());
         holder.imageViewPortada.setImageResource(libroActual.getImagenResourceId());
 
-        // Configurar el botón "Agregar al Carrito"
-        holder.buttonAgregarCarrito.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "¡" + libroActual.getTitulo() + " agregado al carrito!", Toast.LENGTH_SHORT).show();
-                // Aquí podrías implementar la lógica real para agregar al carrito.
-            }
+        holder.buttonAgregarCarrito.setOnClickListener(v -> {
+            Toast.makeText(context, "¡" + libroActual.getTitulo() + " agregado al carrito!", Toast.LENGTH_SHORT).show();
         });
 
-        // Configurar clic en toda la tarjeta para ir a la pantalla de detalles
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, DetalleLibroActivity.class);
-                intent.putExtra("TITULO_LIBRO", libroActual.getTitulo());
-                intent.putExtra("DESCRIPCION_LIBRO", libroActual.getDescripcion());
-                intent.putExtra("IMAGEN_LIBRO", libroActual.getImagenResourceId());
-                context.startActivity(intent);
-            }
+        // Navegar a la pantalla de detalles al hacer clic en el item
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, DetalleLibroActivity.class);
+            intent.putExtra("TITULO_LIBRO", libroActual.getTitulo());
+            intent.putExtra("DESCRIPCION_LIBRO", libroActual.getDescripcion());
+            intent.putExtra("IMAGEN_LIBRO", libroActual.getImagenResourceId());
+            context.startActivity(intent);
         });
     }
 

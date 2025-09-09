@@ -13,7 +13,6 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
-        <!-- Imagen de la portada del libro -->
         <ImageView
             android:id="@+id/imageViewPortada"
             android:layout_width="80dp"
@@ -21,7 +20,6 @@
             android:scaleType="centerCrop"
             android:contentDescription="@string/descripcion_imagen_portada" />
 
-        <!-- Contenedor para el título y la descripción -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -48,7 +46,6 @@
 
         </LinearLayout>
 
-        <!-- Botón para agregar al carrito -->
         <Button
             android:id="@+id/buttonAgregarCarrito"
             android:layout_width="wrap_content"
