@@ -1,64 +1,77 @@
 package com.example.libreriaonlineapp;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CategoriasFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class CategoriasFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CategoriasFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CategoriasFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CategoriasFragment newInstance(String param1, String param2) {
-        CategoriasFragment fragment = new CategoriasFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private RecyclerView recyclerViewCategorias;
+    private CategoriaAdapter adaptador;
+    private OnCategoriaSeleccionadaListener listener; // Nueva variable
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public void onAttach(@NonNull android.content.Context context) {
+        super.onAttach(context);
+        // Verificar que la actividad padre implementa la interfaz
+        if (context instanceof OnCategoriaSeleccionadaListener) {
+            listener = (OnCategoriaSeleccionadaListener) context;
+        } else {
+            throw new RuntimeException(context.toString() + " debe implementar OnCategoriaSeleccionadaListener");
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categorias, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_categorias, container, false);
+
+        recyclerViewCategorias = view.findViewById(R.id.recyclerViewCategorias);
+        recyclerViewCategorias.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Lista de categorías
+        List<String> categorias = new ArrayList<>();
+        categorias.add("Todas");
+        categorias.add("Fantasía Histórica");
+        categorias.add("Fantasía");
+        categorias.add("Ciencia Ficción");
+        categorias.add("Fantasía Oscura");
+        categorias.add("Fantasía Bélica");
+        categorias.add("Fantasía Clásica");
+        categorias.add("Fábula");
+        categorias.add("Ficción");
+        categorias.add("Infantil");
+        categorias.add("Clásico");
+
+        adaptador = new CategoriaAdapter(requireContext(), categorias, new CategoriaAdapter.OnCategoriaClickListener() {
+            @Override
+            public void onCategoriaClick(String categoria) {
+                System.out.println("DEBUG: Categoría clickeada: " + categoria);
+                Toast.makeText(requireContext(), "Categoría seleccionada: " + categoria, Toast.LENGTH_SHORT).show(); // <-- AGREGA ESTO
+
+                if (listener != null) {
+                    System.out.println("DEBUG: Enviando al listener...");
+                    listener.onCategoriaSeleccionada(categoria);
+                } else {
+                    System.out.println("DEBUG: ¡ERROR! Listener es NULL.");
+                    Toast.makeText(requireContext(), "¡ERROR! Listener es NULL.", Toast.LENGTH_LONG).show(); // <-- AGREGA ESTO
+                }
+            }
+        });
+
+        recyclerViewCategorias.setAdapter(adaptador);
+
+        return view;
     }
+
+
 }

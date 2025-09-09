@@ -43,7 +43,7 @@ public class DetalleLibroActivity extends AppCompatActivity {
 
         // Botón de compra
         findViewById(R.id.buttonComprar).setOnClickListener(v ->
-                Toast.makeText(this, "¡Compra iniciada para: " + titulo + "!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "¡Proximamente;!", Toast.LENGTH_LONG).show()
         );
         if (titulo != null && getSupportActionBar() != null) {
             getSupportActionBar().setTitle(titulo);

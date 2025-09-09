@@ -1,14 +1,15 @@
 package com.example.libreriaonlineapp;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnCategoriaSeleccionadaListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         // Cargar el fragmento de inicio por defecto
         loadFragment(new HomeFragment());
 
-        // Configurar el listener del BottomNavigationView
         bottomNavigationView.setOnItemSelectedListener(item -> {
             Fragment fragment = null;
 
@@ -40,10 +40,39 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Método para cargar un fragmento en el contenedor
-    private void loadFragment(Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fragmentContainer, fragment);
-        transaction.commit();
+    public void loadFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        String tag = null;
+
+        if (fragment instanceof HomeFragment) {
+            tag = "HOME_FRAGMENT";
+        } else if (fragment instanceof CategoriasFragment) {
+            tag = "CATEGORIAS_FRAGMENT";
+        } else if (fragment instanceof CarritoFragment) {
+            tag = "CARRITO_FRAGMENT";
+        }
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragment, tag)
+                .commit();
+    }
+
+    @Override
+    public void onCategoriaSeleccionada(String categoria) {
+        System.out.println("DEBUG: MainActivity recibió: " + categoria);
+
+        // Siempre creamos un NUEVO HomeFragment
+        HomeFragment homeFragment = new HomeFragment();
+
+        // Guardamos la categoría seleccionada en una variable estática
+        // (Esta es una solución rápida y efectiva para la evaluación)
+        HomeFragment.CATEGORIA_SELECCIONADA = categoria;
+
+        // Cargamos el nuevo fragmento
+        loadFragment(homeFragment);
+
+        // Cambiamos a la pestaña de Inicio
+        BottomNavigationView bottomNav = findViewById(R.id.bottomNavigationView);
+        bottomNav.setSelectedItemId(R.id.navigation_home);
     }
 }
