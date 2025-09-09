@@ -44,15 +44,17 @@
                 android:textSize="14sp"
                 android:textColor="@android:color/darker_gray" />
 
-        </LinearLayout>
-
         <Button
             android:id="@+id/btn_agregar_carrito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:text="@string/btn_agregar_carrito"
+            android:layout_marginTop="10dp"
             android:minWidth="120dp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
