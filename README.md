@@ -60,16 +60,22 @@ Esta aplicación es una librería online que permite a los usuarios explorar lib
 
 ## 📸 Capturas de Pantalla
 
-![Pantalla Principal](capturas/pantalla_principal.png)
+*Pantalla Principal*
+<p align="center">
+  <img src="capturas/pantalla_principal.png" alt="Pantalla Principal">
+</p>
 *Muestra la lista de libros en la pestaña "Inicio".*
-
-![Pantalla de Detalles](capturas/pantalla_detalles.png)
+<p align="center">
+  <img src="capturas/pantalla_detalles.png" alt="Pantalla de Detalles">
+</p>
 *Muestra la información completa de un libro.*
-
-![Pantalla de Categorías](capturas/pantalla_categorias.png)
+<p align="center">
+  <img src="capturas/pantalla_categorias.png" alt="Pantalla de Categorías">
+</p>
 *Permite al usuario filtrar los libros por género.*
-
-![Pantalla del Carrito](capturas/pantalla_carrito.png)
+<p align="center">
+  <img src="capturas/pantalla_carrito.png" alt="Pantalla del Carrito">
+</p>
 *Muestra los libros que el usuario ha agregado.*
 
 ---
