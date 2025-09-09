@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Librería Online</string>
+    <string name="descripcion_imagen_portada">Portada del libro</string>
+    <string name="agregar_al_carrito">Agregar</string>
+</resources>
